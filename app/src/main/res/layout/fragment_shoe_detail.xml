@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.models.ShoeViewModel" />
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+    <!-- to make a block of views in vertical way-->
+    <LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/wide"
+    tools:context=".ShoeDetail">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/add_shoes"
+        android:layout_marginBottom="@dimen/wide"
+        style="@style/titleText"
+        />
+
+    <EditText
+        android:id="@+id/shoeName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height"
+        android:paddingHorizontal="@dimen/wide"
+        android:background="@drawable/input_background"
+        android:hint="@string/name"
+        android:text="@={shoe.name}"
+        android:inputType="text"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/shoeCompany"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height"
+        android:paddingHorizontal="@dimen/wide"
+        android:background="@drawable/input_background"
+        android:hint="@string/company"
+        android:text="@={shoe.company}"
+        android:inputType="text"
+        android:layout_marginVertical="@dimen/wide"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/shoeSize"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height"
+        android:paddingHorizontal="@dimen/wide"
+        android:background="@drawable/input_background"
+        android:hint="@string/size"
+        android:text="@={shoe.size}"
+        android:inputType="number"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/shoeDescription"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height"
+        android:paddingHorizontal="@dimen/wide"
+        android:background="@drawable/input_background"
+        android:hint="@string/description"
+        android:text="@={shoe.description}"
+        android:inputType="textMultiLine"
+        android:importantForAutofill="no"
+        android:layout_marginVertical="@dimen/wide"/>
+
+        <!-- to make a line of two buttons horizontally-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+    <Button
+        android:id="@+id/save"
+        style="@style/button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> viewModel.addShoe(shoe)}"
+        android:text="@string/save" />
+
+            <Button
+                android:id="@+id/back"
+                style="@style/button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="200dp"
+                android:text="@string/back" />
+        </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/add_shoes"
+        android:layout_marginBottom="@dimen/wide"
+        android:layout_marginEnd="@dimen/wide"
+        android:src="@drawable/ic_back"
+        android:layout_gravity="end"
+        android:backgroundTint="@color/orange"
+         />
+
+
+</LinearLayout>
+</layout>

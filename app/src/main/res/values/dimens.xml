@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="wide">16dp</dimen>
+    <dimen name="height">40dp</dimen>
+    <dimen name="titles">31sp</dimen>
+    <dimen name="subTitles">18sp</dimen>
+    <dimen name="productNameSize">16sp</dimen>
+</resources>
